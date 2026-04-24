@@ -13,6 +13,7 @@
 | 5 | Dropdown Menu | CSS3 Positioning | Professional navigation menu with submenus |
 
 ## Project Structure
+```
 HTML5-Advanced-Demo/
 │
 ├── index.html # Main page — Only HTML structure
@@ -21,7 +22,7 @@ HTML5-Advanced-Demo/
 ├── worker.js # Web Worker script (background counter)
 ├── sse.php # Server-side script for SSE
 └── README.md # Project documentation
-
+```
 
 ## How to Run Locally
 
