@@ -5,196 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML5 Advanced Demo - Complete Project</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* ===== Section 5: Modern Dropdown Menu ===== */
-        nav {
-            background: #1e1e2f;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        nav ul li {
-            position: relative;
-        }
-
-        nav ul li a {
-            display: block;
-            padding: 18px 30px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: #e74c3c;
-            transform: translateY(-2px);
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            background: #2d2d44;
-            top: 100%;
-            left: 0;
-            min-width: 200px;
-            border-radius: 10px;
-            overflow: hidden;
-            animation: fadeIn 0.3s;
-            z-index: 1000;
-        }
-
-        nav ul li:hover .dropdown {
-            display: block;
-        }
-
-        .dropdown li a {
-            padding: 12px 20px;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Cards Content */
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h2 {
-            color: #667eea;
-            margin-bottom: 15px;
-            border-left: 4px solid #e74c3c;
-            padding-left: 15px;
-        }
-
-        /* ===== Section 4: Attractive Button ===== */
-        .jazzy-btn {
-            background: linear-gradient(45deg, #ff416c, #ff4b2b);
-            border: none;
-            color: white;
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin: 10px 0;
-        }
-
-        .jazzy-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #ff4b2b, #ff416c);
-        }
-
-        .jazzy-btn:active {
-            transform: scale(0.95);
-        }
-
-        .stop-btn {
-            background: linear-gradient(45deg, #2c3e50, #34495e);
-            margin-left: 10px;
-        }
-
-        .status {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .online {
-            background: #27ae60;
-            color: white;
-        }
-
-        .offline {
-            background: #c0392b;
-            color: white;
-        }
-
-        .result-box {
-            background: #f0f0f0;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-            font-family: monospace;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .flex-row {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .badge {
-            background: #667eea;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        code {
-            background: #2d2d44;
-            color: #ff416c;
-            padding: 2px 6px;
-            border-radius: 5px;
-            font-family: monospace;
-        }
-    </style>
+    
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -273,7 +86,7 @@
                 <span class="badge">✅ box-shadow</span>
                 <span class="badge">✅ :hover & :active</span>
             </div>
-            <div class="result-box" style="background: #2d2d44; color: white;">
+            <div class="result-box explanation-box">
                 <strong>💡 What's happening?</strong><br>
                 • <strong>:hover</strong> — Mouse over button → grows and changes color<br>
                 • <strong>:active</strong> — While clicking → shrinks slightly<br>
@@ -286,7 +99,7 @@
         <div class="card">
             <h2>🎯 Section 5: CSS Dropdown Menu Explained</h2>
             <p>Professional navigation with submenus using CSS positioning</p>
-            <div class="result-box" style="background: #2d2d44; color: white;">
+            <div class="result-box explanation-box">
                 <strong>🔧 Technical Details:</strong><br>
                 • <code>position: relative</code> on <code>&lt;li&gt;</code> → Creates anchor point<br>
                 • <code>position: absolute</code> on <code>.dropdown</code> → Positions relative to parent<br>
