@@ -1,4 +1,4 @@
-# HTML5-Advanced-Demo
+# HTML5 Advanced Demo
 
 > A comprehensive demo showcasing 5 advanced HTML5 features — combining academic excellence with real-world web development skills.
 
