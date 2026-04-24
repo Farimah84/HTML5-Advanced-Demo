@@ -15,7 +15,8 @@
 ## Project Structure
 HTML5-Advanced-Demo/
 │
-├── index.html # Main page — all features combined
+├── index.html # Main page — Only HTML structure
+├── style.css # All CSS styles
 ├── demo.appcache # Manifest file for offline storage
 ├── worker.js # Web Worker script (background counter)
 ├── sse.php # Server-side script for SSE
