@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html manifest="demo.appcache">
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دموی کامل HTML5 - ارائه پیشرفته</title>
+    <title>HTML5 Advanced Demo - Complete Project</title>
     <style>
         * {
             margin: 0;
@@ -24,7 +24,7 @@
             margin: 0 auto;
         }
 
-        /* ===== بخش 5: منوی جذاب ===== */
+        /* ===== Section 5: Modern Dropdown Menu ===== */
         nav {
             background: #1e1e2f;
             border-radius: 15px;
@@ -68,7 +68,7 @@
             border-radius: 10px;
             overflow: hidden;
             animation: fadeIn 0.3s;
-            z-index: 100;
+            z-index: 1000;
         }
 
         nav ul li:hover .dropdown {
@@ -90,7 +90,7 @@
             }
         }
 
-        /* کارت‌های محتوا */
+        /* Cards Content */
         .card {
             background: white;
             border-radius: 20px;
@@ -107,11 +107,11 @@
         .card h2 {
             color: #667eea;
             margin-bottom: 15px;
-            border-right: 4px solid #e74c3c;
-            padding-right: 15px;
+            border-left: 4px solid #e74c3c;
+            padding-left: 15px;
         }
 
-        /* ===== بخش 4: دکمه جذاب ===== */
+        /* ===== Section 4: Attractive Button ===== */
         .jazzy-btn {
             background: linear-gradient(45deg, #ff416c, #ff4b2b);
             border: none;
@@ -183,81 +183,124 @@
             padding: 3px 10px;
             border-radius: 15px;
             font-size: 12px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        code {
+            background: #2d2d44;
+            color: #ff416c;
+            padding: 2px 6px;
+            border-radius: 5px;
+            font-family: monospace;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- منوی جذاب (بخش 5) -->
+        <!-- Section 5: Attractive Menu -->
         <nav>
             <ul>
-                <li><a href="#">🏠 خانه</a></li>
-                <li><a href="#">📦 محصولات</a>
+                <li><a href="#">🏠 Home</a></li>
+                <li><a href="#">📦 Products</a>
                     <ul class="dropdown">
-                        <li><a href="#">📱 موبایل</a></li>
-                        <li><a href="#">💻 لپ‌تاپ</a></li>
-                        <li><a href="#">📟 تبلت</a></li>
-                        <li><a href="#">🎧 هدفون</a></li>
+                        <li><a href="#">📱 Mobile</a></li>
+                        <li><a href="#">💻 Laptop</a></li>
+                        <li><a href="#">📟 Tablet</a></li>
+                        <li><a href="#">🎧 Headphones</a></li>
                     </ul>
                 </li>
-                <li><a href="#">🛠 خدمات</a>
+                <li><a href="#">🛠 Services</a>
                     <ul class="dropdown">
-                        <li><a href="#">🔧 تعمیرات</a></li>
-                        <li><a href="#">📞 پشتیبانی</a></li>
+                        <li><a href="#">🔧 Repairs</a></li>
+                        <li><a href="#">📞 Support</a></li>
+                        <li><a href="#">💻 Consulting</a></li>
                     </ul>
                 </li>
-                <li><a href="#">📞 تماس با ما</a></li>
+                <li><a href="#">📞 Contact</a></li>
+                <li><a href="#">ℹ️ About</a></li>
             </ul>
         </nav>
 
-        <!-- بخش 1: Application Cache -->
+        <!-- Section 1: Application Cache -->
         <div class="card">
-            <h2>📦 بخش 1: Application Cache (ذخیره آفلاین)</h2>
-            <p>این صفحه با <code>manifest="demo.appcache"</code> پیکربندی شده است.</p>
+            <h2>📦 Section 1: Application Cache (Offline Storage)</h2>
+            <p>This page is configured with <code>manifest="demo.appcache"</code></p>
             <div class="result-box">
-                <strong>وضعیت:</strong><br>
-                <span id="cacheStatus">در حال بررسی...</span><br>
-                <small>نکته: برای تست آفلاین، اینترنت را قطع کنید و صفحه را refresh نمایید.</small>
+                <strong>Status:</strong><br>
+                <span id="cacheStatus">Checking...</span><br>
+                <small><strong>Test offline mode:</strong> Disconnect internet and refresh the page. Everything still works!</small>
             </div>
         </div>
 
-        <!-- بخش 2: Web Worker -->
+        <!-- Section 2: Web Worker -->
         <div class="card">
-            <h2>🧵 بخش 2: Web Worker (شمارنده در پس‌زمینه)</h2>
-            <p>این شمارنده در یک Web Worker جداگانه اجرا می‌شود و صفحه را قفل نمی‌کند.</p>
+            <h2>🧵 Section 2: Web Worker (Background Processing)</h2>
+            <p>This counter runs in a separate background thread. The page never freezes!</p>
             <div class="flex-row">
-                <button class="jazzy-btn" onclick="startWorker()">▶ شروع شمارنده</button>
-                <button class="jazzy-btn stop-btn" onclick="stopWorker()">⏹ توقف شمارنده</button>
+                <button class="jazzy-btn" onclick="startWorker()">▶ Start Counter</button>
+                <button class="jazzy-btn stop-btn" onclick="stopWorker()">⏹ Stop Counter</button>
             </div>
             <div class="result-box">
-                <strong>مقدار شمارنده:</strong>
+                <strong>Counter Value:</strong>
                 <div id="workerResult" style="font-size: 24px; font-weight: bold; margin-top: 10px;">0</div>
+                <small>This counter runs without blocking UI. Try clicking buttons while it runs!</small>
             </div>
         </div>
 
-        <!-- بخش 3: SSE -->
+        <!-- Section 3: Server-Sent Events -->
         <div class="card">
-            <h2>📡 بخش 3: Server-Sent Events (دریافت خودکار از سرور)</h2>
-            <p>اتصال به سرور برقرار است. سرور هر ۳ ثانیه زمان را ارسال می‌کند.</p>
-            <button class="jazzy-btn" onclick="startSSE()" id="sseStartBtn">🔌 اتصال به سرور</button>
+            <h2>📡 Section 3: Server-Sent Events (Real-time Updates)</h2>
+            <p>Persistent connection to server. Server sends time every 3 seconds automatically.</p>
+            <button class="jazzy-btn" onclick="startSSE()" id="sseStartBtn">🔌 Connect to Server</button>
             <div class="result-box" id="sseResult">
-                <em>هنوز متصل نشده...</em>
+                <em>Not connected yet...</em>
             </div>
-            <div id="sseStatus" class="status" style="background: #95a5a6;">❌ قطع</div>
+            <div id="sseStatus" class="status" style="background: #95a5a6;">❌ Disconnected</div>
+            <small>⚠️ Requires PHP server (XAMPP/WAMP). Without server, this section shows connection error.</small>
         </div>
 
-        <!-- بخش 4: دکمه جذاب (قبلاً در بالا استفاده شد) -->
+        <!-- Section 4: Attractive Button Demo -->
         <div class="card">
-            <h2>✨ بخش 4: دکمه جذاب با CSS (بدون جاوااسکریپت)</h2>
-            <p>دکمه‌های بالا و پایین با افکت‌های حرفه‌ای CSS ساخته شده‌اند.</p>
-            <button class="jazzy-btn" onclick="alert('دکمه جذاب کلیک شد!')">🌟 دکمه نمونه جذاب</button>
-            <button class="jazzy-btn" onclick="alert('افکت hover و active رو دیدی!')">🎨 تست کن</button>
-            <p class="badge">✅ transition | transform | gradient | box-shadow</p>
+            <h2>✨ Section 4: CSS Attractive Buttons (No JavaScript)</h2>
+            <p>Interactive buttons using only CSS pseudo-classes <code>:hover</code> and <code>:active</code></p>
+            <button class="jazzy-btn" onclick="alert('Beautiful button clicked!')">🌟 Click Me!</button>
+            <button class="jazzy-btn" onclick="alert('Hover and active effects work!')">🎨 Test Effects</button>
+            <div>
+                <span class="badge">✅ transition</span>
+                <span class="badge">✅ transform: scale()</span>
+                <span class="badge">✅ linear-gradient</span>
+                <span class="badge">✅ box-shadow</span>
+                <span class="badge">✅ :hover & :active</span>
+            </div>
+            <div class="result-box" style="background: #2d2d44; color: white;">
+                <strong>💡 What's happening?</strong><br>
+                • <strong>:hover</strong> — Mouse over button → grows and changes color<br>
+                • <strong>:active</strong> — While clicking → shrinks slightly<br>
+                • <strong>transition</strong> — Smooth animation between states<br>
+                • <strong>No JavaScript needed!</strong>
+            </div>
+        </div>
+
+        <!-- Section 5: Menu Explanation Card -->
+        <div class="card">
+            <h2>🎯 Section 5: CSS Dropdown Menu Explained</h2>
+            <p>Professional navigation with submenus using CSS positioning</p>
+            <div class="result-box" style="background: #2d2d44; color: white;">
+                <strong>🔧 Technical Details:</strong><br>
+                • <code>position: relative</code> on <code>&lt;li&gt;</code> → Creates anchor point<br>
+                • <code>position: absolute</code> on <code>.dropdown</code> → Positions relative to parent<br>
+                • <code>top: 100%</code> → Places menu directly below item<br>
+                • <code>z-index: 1000</code> → Appears above all content<br>
+                • <code>:hover</code> on parent → Shows the dropdown<br>
+                • <code>@keyframes fadeIn</code> → Smooth entrance animation<br>
+                <strong>✨ Hover over "Products" or "Services" to see it in action!</strong>
+            </div>
         </div>
     </div>
 
     <script>
-        // ===== Web Worker =====
+        // ===== Web Worker Logic =====
         let worker;
 
         function startWorker() {
@@ -268,9 +311,9 @@
                 worker.onmessage = function(event) {
                     document.getElementById("workerResult").innerHTML = event.data;
                 };
-                document.getElementById("workerResult").innerHTML = "شروع شد...";
+                document.getElementById("workerResult").innerHTML = "Starting...";
             } else {
-                document.getElementById("workerResult").innerHTML = "مرورگر شما Web Worker را پشتیبانی نمی‌کند.";
+                document.getElementById("workerResult").innerHTML = "Your browser does not support Web Workers.";
             }
         }
 
@@ -278,11 +321,11 @@
             if (worker) {
                 worker.terminate();
                 worker = undefined;
-                document.getElementById("workerResult").innerHTML = "متوقف شد";
+                document.getElementById("workerResult").innerHTML = "Stopped";
             }
         }
 
-        // ===== SSE =====
+        // ===== Server-Sent Events Logic =====
         let source;
 
         function startSSE() {
@@ -293,7 +336,7 @@
                 source = new EventSource("sse.php");
                 
                 source.onopen = function() {
-                    document.getElementById("sseStatus").innerHTML = "✅ متصل";
+                    document.getElementById("sseStatus").innerHTML = "✅ Connected";
                     document.getElementById("sseStatus").style.background = "#27ae60";
                 };
                 
@@ -306,16 +349,16 @@
                 };
                 
                 source.onerror = function() {
-                    document.getElementById("sseStatus").innerHTML = "⚠️ قطع (نیاز به سرور PHP)";
+                    document.getElementById("sseStatus").innerHTML = "⚠️ Disconnected (PHP server required)";
                     document.getElementById("sseStatus").style.background = "#c0392b";
                 };
                 
-                document.getElementById("sseStartBtn").innerHTML = "🔄 در حال اتصال...";
+                document.getElementById("sseStartBtn").innerHTML = "🔄 Connecting...";
                 setTimeout(() => {
-                    document.getElementById("sseStartBtn").innerHTML = "🔌 قطع و وصل مجدد";
+                    document.getElementById("sseStartBtn").innerHTML = "🔌 Reconnect";
                 }, 1000);
             } else {
-                document.getElementById("sseResult").innerHTML = "مرورگر شما SSE را پشتیبانی نمی‌کند.";
+                document.getElementById("sseResult").innerHTML = "Your browser does not support Server-Sent Events.";
             }
         }
 
@@ -323,28 +366,28 @@
         if (window.applicationCache) {
             const cache = window.applicationCache;
             cache.addEventListener('cached', function() {
-                document.getElementById("cacheStatus").innerHTML = "✅ فایل‌ها با موفقیت ذخیره شدند (Cached)";
+                document.getElementById("cacheStatus").innerHTML = "✅ Files successfully cached for offline use";
             });
             cache.addEventListener('updateready', function() {
-                document.getElementById("cacheStatus").innerHTML = "🔄 نسخه جدید آماده است، صفحه را refresh کنید";
+                document.getElementById("cacheStatus").innerHTML = "🔄 New version ready. Refresh page to update.";
             });
             cache.addEventListener('noupdate', function() {
-                document.getElementById("cacheStatus").innerHTML = "📄 بدون تغییر، از حافظه محلی استفاده می‌شود";
+                document.getElementById("cacheStatus").innerHTML = "📄 No changes — using cached version";
             });
             cache.addEventListener('error', function() {
-                document.getElementById("cacheStatus").innerHTML = "❌ خطا در ذخیره‌سازی";
+                document.getElementById("cacheStatus").innerHTML = "❌ Error caching files";
             });
-            document.getElementById("cacheStatus").innerHTML = "🎯 Application Cache فعال است";
+            document.getElementById("cacheStatus").innerHTML = "🎯 Application Cache is active";
         } else {
-            document.getElementById("cacheStatus").innerHTML = "⚠️ مرورگر از Application Cache پشتیبانی نمی‌کند";
+            document.getElementById("cacheStatus").innerHTML = "⚠️ Your browser does not support Application Cache";
         }
 
-        // نمایش وضعیت آنلاین/آفلاین
+        // Online/Offline status display
         window.addEventListener('online', function() {
-            alert('اینترنت وصل شد!');
+            alert('✅ Internet connected!');
         });
         window.addEventListener('offline', function() {
-            alert('اینترنت قطع شد! صفحه هنوز کار می‌کند (آفلاین)');
+            alert('⚠️ Internet disconnected! Page still works (offline mode)');
         });
     </script>
 </body>
