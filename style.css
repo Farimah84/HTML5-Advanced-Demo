@@ -1,0 +1,264 @@
+/* ======================================== */
+/* HTML5 Advanced Demo - Complete CSS File  */
+/* All styles for the demo project          */
+/* ======================================== */
+
+/* ---------- Global Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Body Styling ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ---------- Container ---------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========== Section 5: Dropdown Menu ========== */
+nav {
+    background: #1e1e2f;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 18px 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    background: #e74c3c;
+    transform: translateY(-2px);
+}
+
+/* Dropdown Submenu */
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #2d2d44;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 0.3s;
+    z-index: 1000;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    padding: 12px 20px;
+}
+
+/* Dropdown Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== Section 4: Attractive Buttons ========== */
+.jazzy-btn {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin: 10px 0;
+}
+
+.jazzy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+
+.jazzy-btn:active {
+    transform: scale(0.95);
+}
+
+.stop-btn {
+    background: linear-gradient(45deg, #2c3e50, #34495e);
+    margin-left: 10px;
+}
+
+.stop-btn:hover {
+    background: linear-gradient(45deg, #34495e, #2c3e50);
+}
+
+/* ========== Cards ========== */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+    border-left: 4px solid #e74c3c;
+    padding-left: 15px;
+}
+
+/* ========== Status Indicators ========== */
+.status {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.online {
+    background: #27ae60;
+    color: white;
+}
+
+.offline {
+    background: #c0392b;
+    color: white;
+}
+
+/* ========== Result Boxes ========== */
+.result-box {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-family: monospace;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.explanation-box {
+    background: #2d2d44;
+    color: white;
+}
+
+.explanation-box code {
+    background: #1e1e2f;
+    color: #ff416c;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+/* ========== Flex Layouts ========== */
+.flex-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ========== Badges ========== */
+.badge {
+    background: #667eea;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+/* ========== Code Styling ========== */
+code {
+    background: #2d2d44;
+    color: #ff416c;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    
+    .dropdown {
+        position: static;
+        width: 100%;
+        padding-left: 20px;
+    }
+    
+    .jazzy-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+    
+    .card h2 {
+        font-size: 18px;
+    }
+}
+
+/* ========== Utility Classes ========== */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
