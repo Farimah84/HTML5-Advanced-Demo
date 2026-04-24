@@ -90,3 +90,12 @@ MIT License — Free to use, copy, modify, and distribute.
 ---
 
 **Built with HTML5, CSS3, JavaScript, and PHP**
+
+## How to run
+
+git init
+git add .
+git commit -m "Initial commit: Complete HTML5 Advanced Demo"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/HTML5-Advanced-Demo.git
+git push -u origin main
