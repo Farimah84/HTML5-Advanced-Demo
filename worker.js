@@ -15,3 +15,4 @@ function timedCount() {
 
 // Start the counting
 timedCount();
+
